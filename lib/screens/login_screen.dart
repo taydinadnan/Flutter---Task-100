@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _loginButton() {
     return InkWell(
       onTap: () {
-        _openPopup(context);
+        _LoginPopup(context);
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -104,7 +104,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _signUpButton() {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        _SignUpPopup(context);
+      },
       child: Container(
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.symmetric(vertical: 14),
@@ -127,10 +129,42 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  _openPopup(context) {
+  _LoginPopup(context) {
     Alert(
         context: context,
         title: "LOGIN",
+        content: Column(
+          children: const <Widget>[
+            TextField(
+              decoration: InputDecoration(
+                icon: Icon(Icons.account_circle),
+                labelText: 'Email',
+              ),
+            ),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                icon: Icon(Icons.lock),
+                labelText: 'Password',
+              ),
+            ),
+          ],
+        ),
+        buttons: [
+          DialogButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text(
+              "LOGIN",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          )
+        ]).show();
+  }
+
+  _SignUpPopup(context) {
+    Alert(
+        context: context,
+        title: "Sign-up",
         content: Column(
           children: const <Widget>[
             TextField(
@@ -140,10 +174,23 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             TextField(
+              decoration: InputDecoration(
+                icon: Icon(Icons.email),
+                labelText: 'Email',
+              ),
+            ),
+            TextField(
               obscureText: true,
               decoration: InputDecoration(
                 icon: Icon(Icons.lock),
                 labelText: 'Password',
+              ),
+            ),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                icon: Icon(Icons.lock),
+                labelText: 'Comfirm Password',
               ),
             ),
           ],
