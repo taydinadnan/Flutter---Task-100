@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech387task/Widgets/user_social_buttons.dart';
 
 import '../Models/user.dart';
 import '../Models/user_info.dart';
@@ -45,6 +46,8 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               const SizedBox(height: 24),
               buildName(user),
+              const SizedBox(height: 24),
+              const UserSocalButtns(),
               const SizedBox(height: 24),
               buildlocation(user),
               const SizedBox(height: 48),

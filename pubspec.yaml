@@ -63,8 +63,10 @@ flutter:
     - assets/images/facebook.png
     - assets/images/google.png
     - assets/images/twitter.png
-    - assets/images/logoMowe.png
+    - assets/images/logoMowe.pngw
     - assets/images/logoMoweWhite.png
+    - assets/images/fb.png
+    - assets/images/linkedin.png
 
   #   - images/a_dot_ham.jpeg
 

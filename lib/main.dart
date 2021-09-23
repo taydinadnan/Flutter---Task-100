@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tech387task/screens/login_screen.dart';
 
 import './screens/home_screen.dart';
 
@@ -18,8 +19,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Tech387 Tast 100',
+      theme: ThemeData(
+        primarySwatch: Colors.blueGrey,
+      ),
       themeMode: ThemeMode.light,
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
