@@ -11,9 +11,13 @@ class SocalButtns extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton(
-            onPressed: () {}, icon: Image.asset("assets/images/facebook.png")),
+          onPressed: () {},
+          icon: Image.asset("assets/images/facebook.png"),
+        ),
         IconButton(
-            onPressed: () {}, icon: Image.asset("assets/images/google.png")),
+          onPressed: () {},
+          icon: Image.asset("assets/images/google.png"),
+        ),
       ],
     );
   }

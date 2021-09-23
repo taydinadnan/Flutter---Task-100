@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './pofile_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   static const title = 'solomon_bottom_bar';
   HomeScreen({Key? key}) : super(key: key);
@@ -17,13 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const Center(
       child: Text('heyyy'),
     ),
-    const Center(
-      child: Text(
-        'Work done will appear in this tab',
-        style: TextStyle(
-            fontSize: 50, fontWeight: FontWeight.bold, color: Colors.red),
-      ),
-    ),
+    const Center(child: ProfilePage()),
   ];
 
   @override
@@ -52,22 +48,22 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             title: Text('Home'),
-            backgroundColor: Color(0xFF22577A),
+            backgroundColor: Color(0xfF86B4CF),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
             title: Text('Chat'),
-            backgroundColor: Color(0xFF38A3A5),
+            backgroundColor: Color(0xfF86B4CF),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
             title: Text('Notifications'),
-            backgroundColor: Color(0xFF57CC99),
+            backgroundColor: Color(0xfF86B4CF),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             title: Text('Profile'),
-            backgroundColor: Color(0xFF80ED99),
+            backgroundColor: Color(0xfF86B4CF),
           ),
         ],
         onTap: (index) {

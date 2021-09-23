@@ -164,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
   _SignUpPopup(context) {
     Alert(
         context: context,
-        title: "Sign-up",
+        title: "LOGIN",
         content: Column(
           children: const <Widget>[
             TextField(

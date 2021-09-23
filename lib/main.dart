@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tech387task/constants.dart';
-import 'package:tech387task/screens/home_screen.dart';
+
+import './screens/home_screen.dart';
 
 void main() {
   DeviceOrientation.portraitUp;
