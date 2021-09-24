@@ -3,7 +3,7 @@ import '../Models/user.dart';
 class UserInfo {
   static const myUser = User(
       imagePath:
-          'https://i.pinimg.com/200x150/d9/fc/d7/d9fcd7b6c1617dec62aa03c492591583.jpg',
+          'https://i.pinimg.com/474x/31/67/da/3167da2cf0f9bf43022256eee77af5dc.jpg',
       name: 'Adnan Turgay',
       email: 'taydinadnan',
       about: 'Traveller!',

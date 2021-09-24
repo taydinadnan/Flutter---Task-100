@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "75420967099",
+    "project_id": "tech387mowe",
+    "storage_bucket": "tech387mowe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75420967099:android:26e1a2362a511eb292499e",
+        "android_client_info": {
+          "package_name": "com.example.tech387task"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75420967099-hbs1iiqk98k6i81sietshumn27sf0h1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_ZcEo1GKc0AkgJGeeRZSfqiifNXdxERw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75420967099-hbs1iiqk98k6i81sietshumn27sf0h1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

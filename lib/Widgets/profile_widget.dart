@@ -42,8 +42,8 @@ class ProfileWidget extends StatelessWidget {
         child: Ink.image(
           image: image,
           fit: BoxFit.cover,
-          width: 150,
-          height: 150,
+          width: 140,
+          height: 140,
           child: InkWell(onTap: onClicked),
         ),
       ),

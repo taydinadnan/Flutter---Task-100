@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:tech387task/provider/auth_provider.dart';
+import 'package:tech387task/screens/home_screen.dart';
 
 import '../Widgets/logo.dart';
 import '../Widgets/social_buttons.dart';
@@ -7,13 +10,17 @@ import '../Widgets/title_main.dart';
 import '../constants.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
-
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
+  bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -157,6 +164,13 @@ class _LoginScreenState extends State<LoginScreen> {
               "LOGIN",
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
+          ),
+          DialogButton(
+            onPressed: () => _resetPopup(context),
+            child: const Text(
+              "Forget Password?",
+              style: TextStyle(color: Colors.white, fontSize: 15),
+            ),
           )
         ]).show();
   }
@@ -197,9 +211,34 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         buttons: [
           DialogButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () {},
             child: const Text(
-              "LOGIN",
+              "Create account",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          )
+        ]).show();
+  }
+
+  _resetPopup(context) {
+    Alert(
+        context: context,
+        title: "LOGIN",
+        content: Column(
+          children: const <Widget>[
+            TextField(
+              decoration: InputDecoration(
+                icon: Icon(Icons.account_circle),
+                labelText: 'Username',
+              ),
+            ),
+          ],
+        ),
+        buttons: [
+          DialogButton(
+            onPressed: () {},
+            child: const Text(
+              "Reset Password",
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           )

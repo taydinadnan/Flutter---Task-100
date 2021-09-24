@@ -35,7 +35,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   rflutter_alert: ^2.0.4
+  firebase_core: ^1.6.0
+  firebase_auth: ^3.1.1
+  google_sign_in: ^5.1.1
 
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -63,7 +67,7 @@ flutter:
     - assets/images/facebook.png
     - assets/images/google.png
     - assets/images/twitter.png
-    - assets/images/logoMowe.pngw
+    - assets/images/logoMowe.png
     - assets/images/logoMoweWhite.png
     - assets/images/fb.png
     - assets/images/linkedin.png

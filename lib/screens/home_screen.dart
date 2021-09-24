@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech387task/screens/fake_chat_screen.dart';
 
 import './pofile_screen.dart';
 
@@ -15,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final tabs = [
     const Center(child: Text('Hey')),
-    const Center(child: Text('hey')),
+    const Center(child: ChatScreen()),
     const Center(
       child: Text('heyyy'),
     ),

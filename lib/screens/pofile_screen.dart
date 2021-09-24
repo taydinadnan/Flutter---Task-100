@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:tech387task/Widgets/user_social_buttons.dart';
+import 'package:tech387task/screens/login_screen.dart';
 
 import '../Models/user.dart';
 import '../Models/user_info.dart';
 import '../Widgets/profile_widget.dart';
 import '../screens/profile_edit.dart';
 import '../constants.dart';
+import '../provider/auth_provider.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -40,7 +42,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 imagePath: user.imagePath,
                 onClicked: () async {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => EditProfilePage()),
+                    MaterialPageRoute(
+                        builder: (context) => const EditProfilePage()),
                   );
                 },
               ),
@@ -52,6 +55,20 @@ class _ProfilePageState extends State<ProfilePage> {
               buildlocation(user),
               const SizedBox(height: 48),
               buildAbout(user),
+              Padding(
+                padding: const EdgeInsets.only(left: 250),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    //Log
+                    AuthClass().signOut();
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                        (route) => false);
+                  },
+                  child: const Icon(Icons.exit_to_app),
+                ),
+              )
             ],
           ),
         ),
@@ -92,7 +109,7 @@ class _ProfilePageState extends State<ProfilePage> {
       );
 
   Widget buildlocation(User location) => MaterialButton(
-        padding: EdgeInsets.symmetric(vertical: 4),
+        padding: const EdgeInsets.symmetric(vertical: 4),
         onPressed: () {},
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         child: Column(
