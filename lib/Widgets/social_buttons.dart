@@ -21,13 +21,9 @@ class SocalButtns extends StatelessWidget {
           onPressed: () {
             //Sign In with google
             AuthClass().signWithGoogle().then((UserCredential value) {
-              final displayName = value.user!.displayName;
-
-              print(displayName);
-
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
                   (route) => false);
             });
           },

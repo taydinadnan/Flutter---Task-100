@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tech387task/screens/fake_chat_screen.dart';
+import 'package:tech387task/screens/fake_screens/fake_chat_screen.dart';
+import 'package:tech387task/screens/fake_screens/fake_home_screen.dart';
+import 'package:tech387task/screens/fake_screens/fake_notifications_screen.dart';
 
 import './pofile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const title = 'solomon_bottom_bar';
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -15,10 +17,10 @@ class _HomeScreenState extends State<HomeScreen> {
   var _currentIndex = 0;
 
   final tabs = [
-    const Center(child: Text('Hey')),
+    const Center(child: fakeHomeScreen()),
     const Center(child: ChatScreen()),
     const Center(
-      child: Text('heyyy'),
+      child: fakeNotification(),
     ),
     const Center(child: ProfilePage()),
   ];
@@ -48,21 +50,25 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
+            // ignore: deprecated_member_use
             title: Text('Home'),
             backgroundColor: Color(0xfF86B4CF),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
+            // ignore: deprecated_member_use
             title: Text('Chat'),
             backgroundColor: Color(0xfF86B4CF),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
+            // ignore: deprecated_member_use
             title: Text('Notifications'),
             backgroundColor: Color(0xfF86B4CF),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
+            // ignore: deprecated_member_use
             title: Text('Profile'),
             backgroundColor: Color(0xfF86B4CF),
           ),

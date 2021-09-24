@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:tech387task/constants.dart';
 import 'package:tech387task/screens/home_screen.dart';
 import 'package:tech387task/screens/login_screen.dart';
 
@@ -26,12 +25,12 @@ class _SplashScreenState extends State<SplashScreen> {
       if (auth.currentUser == null) {
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => LoginScreen()),
+            MaterialPageRoute(builder: (context) => const LoginScreen()),
             (route) => false);
       } else {
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => HomeScreen()),
+            MaterialPageRoute(builder: (context) => const HomeScreen()),
             (route) => false);
       }
     });

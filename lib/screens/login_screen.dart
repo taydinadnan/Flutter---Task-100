@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:tech387task/provider/auth_provider.dart';
-import 'package:tech387task/screens/home_screen.dart';
 
 import '../Widgets/logo.dart';
 import '../Widgets/social_buttons.dart';
@@ -10,6 +8,8 @@ import '../Widgets/title_main.dart';
 import '../constants.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -17,8 +17,6 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   FirebaseAuth auth = FirebaseAuth.instance;
 
-  TextEditingController _email = TextEditingController();
-  TextEditingController _password = TextEditingController();
   bool isLoading = false;
 
   @override
@@ -136,6 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  // ignore: non_constant_identifier_names
   _LoginPopup(context) {
     Alert(
         context: context,
@@ -175,6 +174,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ]).show();
   }
 
+  // ignore: non_constant_identifier_names
   _SignUpPopup(context) {
     Alert(
         context: context,

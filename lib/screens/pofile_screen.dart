@@ -6,7 +6,6 @@ import '../Models/user.dart';
 import '../Models/user_info.dart';
 import '../Widgets/profile_widget.dart';
 import '../screens/profile_edit.dart';
-import '../constants.dart';
 import '../provider/auth_provider.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -23,54 +22,43 @@ class _ProfilePageState extends State<ProfilePage> {
 
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                Constants.loginScreenGradientStart,
-                Constants.loginScreenGradientEnd,
-                Constants.loginScreenGradientMiddle,
-              ],
+        backgroundColor: const Color(0xfF86B4CF),
+        body: ListView(
+          physics: const BouncingScrollPhysics(),
+          children: [
+            ProfileWidget(
+              imagePath: user.imagePath,
+              onClicked: () async {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => const EditProfilePage()),
+                );
+              },
             ),
-          ),
-          child: ListView(
-            physics: const BouncingScrollPhysics(),
-            children: [
-              ProfileWidget(
-                imagePath: user.imagePath,
-                onClicked: () async {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                        builder: (context) => const EditProfilePage()),
-                  );
+            const SizedBox(height: 44),
+            buildName(user),
+            const SizedBox(height: 14),
+            const UserSocalButtns(),
+            const SizedBox(height: 24),
+            buildlocation(user),
+            const SizedBox(height: 48),
+            buildAbout(user),
+            Padding(
+              padding: const EdgeInsets.only(left: 250),
+              child: FloatingActionButton(
+                onPressed: () {
+                  //Log
+                  AuthClass().signOut();
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()),
+                      (route) => false);
                 },
+                child: const Icon(Icons.exit_to_app),
               ),
-              const SizedBox(height: 24),
-              buildName(user),
-              const SizedBox(height: 24),
-              const UserSocalButtns(),
-              const SizedBox(height: 24),
-              buildlocation(user),
-              const SizedBox(height: 48),
-              buildAbout(user),
-              Padding(
-                padding: const EdgeInsets.only(left: 250),
-                child: FloatingActionButton(
-                  onPressed: () {
-                    //Log
-                    AuthClass().signOut();
-                    Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()),
-                        (route) => false);
-                  },
-                  child: const Icon(Icons.exit_to_app),
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

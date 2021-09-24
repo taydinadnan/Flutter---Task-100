@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tech387task/screens/home_screen.dart';
 import 'package:tech387task/screens/splash_screen.dart';
 
 void main() {
@@ -52,7 +51,7 @@ class _HomeState extends State<Home> {
 
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
-          return SplashScreen();
+          return const SplashScreen();
         }
 
         // Otherwise, show something whilst waiting for initialization to complete
