@@ -38,6 +38,10 @@ dependencies:
   firebase_core: ^1.6.0
   firebase_auth: ^3.1.1
   google_sign_in: ^5.1.1
+  flutter_facebook_auth: ^3.5.2
+  google_maps_flutter: ^2.0.10
+  cloud_firestore: ^2.5.3
+  provider: ^6.0.1
   
   
 dev_dependencies:
@@ -71,6 +75,10 @@ flutter:
     - assets/images/logoMoweWhite.png
     - assets/images/fb.png
     - assets/images/linkedin.png
+    - assets/images/gifntext-gif.gif
+    - assets/images/mowee.png
+    - assets/images/mailICON.png
+
 
   #   - images/a_dot_ham.jpeg
 

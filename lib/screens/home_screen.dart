@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tech387task/screens/fake_screens/fake_chat_screen.dart';
-import 'package:tech387task/screens/fake_screens/fake_home_screen.dart';
-import 'package:tech387task/screens/fake_screens/fake_notifications_screen.dart';
+import 'package:tech387task/screens/profile_screenn.dart';
 
-import './pofile_screen.dart';
+import '../screens/fake_screens/fake_chat_screen.dart';
+import '../screens/fake_screens/fake_home_screen.dart';
+import '../screens/fake_screens/fake_notifications_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const title = 'solomon_bottom_bar';
@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const Center(
       child: fakeNotification(),
     ),
-    const Center(child: ProfilePage()),
+    const Center(child: ProfileSc()),
   ];
 
   @override
@@ -30,47 +30,59 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Container(
         child: tabs[_currentIndex],
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(0xFFB8D0DE),
-              Color(0xfF9FC2D6),
-              Color(0xfF86B4CF),
-            ],
-          ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6.0),
+          gradient: const LinearGradient(
+              begin: FractionalOffset.topLeft,
+              end: FractionalOffset.bottomRight,
+              colors: [
+                Color(0xFFCCCCFF),
+                Color(0xFF96DED1),
+                Color(0XFFB6D0E2),
+                Color(0XFFB6D0E2),
+                Color(0XFFB6D0E2),
+                Color(0xFF96DED1),
+              ],
+              stops: [
+                0.0,
+                0.3,
+                0.3,
+                0.7,
+                0.7,
+                1.0
+              ]),
         ),
       ),
 
       //Bottom bar icons and names
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xFFB8D0DE),
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.black,
         currentIndex: _currentIndex,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             // ignore: deprecated_member_use
             title: Text('Home'),
-            backgroundColor: Color(0xfF86B4CF),
+            backgroundColor: Color(0XFFB6D0E2),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
             // ignore: deprecated_member_use
             title: Text('Chat'),
-            backgroundColor: Color(0xfF86B4CF),
+            backgroundColor: Color(0xFFCCCCFF),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
             // ignore: deprecated_member_use
             title: Text('Notifications'),
-            backgroundColor: Color(0xfF86B4CF),
+            backgroundColor: Color(0xFF96DED1),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             // ignore: deprecated_member_use
             title: Text('Profile'),
-            backgroundColor: Color(0xfF86B4CF),
+            backgroundColor: Color(0XFFB6D0E2),
           ),
         ],
         onTap: (index) {

@@ -46,13 +46,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
                 const SizedBox(height: 24),
                 TextFieldWidget(
-                  label: 'About',
-                  text: user.about,
-                  maxLines: 5,
-                  onChanged: (about) {},
-                ),
-                const SizedBox(height: 24),
-                TextFieldWidget(
                   label: 'Location',
                   text: user.location,
                   maxLines: 5,

@@ -10,7 +10,6 @@ class fakeHomeScreen extends StatefulWidget {
 
 // ignore: camel_case_types
 class _fakeHomeScreenState extends State<fakeHomeScreen> {
-  //Here I'm going to import a list of images that we will use for the profile picture and the storys
   List<String> profileUrl = [
     "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
     "https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=644&q=80",
@@ -26,8 +25,12 @@ class _fakeHomeScreenState extends State<fakeHomeScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Feeds'),
-          backgroundColor: const Color(0xfF86B4CF),
+          title: const Text(
+            'Feeds',
+            style: TextStyle(color: Colors.black),
+          ),
+          backgroundColor: const Color(0XFFB6D0E2),
+          elevation: 5,
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -36,12 +39,20 @@ class _fakeHomeScreenState extends State<fakeHomeScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                //First of all we need to creat the post editor
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color(0xfF86B4CF),
                     borderRadius: BorderRadius.circular(12.0),
+                    color: const Color(0XFFB6D0E2),
+                    border: Border.all(color: Colors.grey),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.8),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -82,19 +93,19 @@ class _fakeHomeScreenState extends State<fakeHomeScreen> {
                             Icon(
                               Icons.video_collection,
                               semanticLabel: "Video",
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                             Spacer(),
                             Icon(
                               Icons.image,
                               semanticLabel: "Image",
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                             Spacer(),
                             Icon(
                               Icons.location_on,
                               semanticLabel: "Location",
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                             Spacer(),
                           ],
@@ -110,14 +121,14 @@ class _fakeHomeScreenState extends State<fakeHomeScreen> {
                 //Now let's create the news feed
                 //first we will make the custom container of the feed
                 //Ok let's test our widget
-                feedBox(profileUrl[0], "Charlotte", "6 min",
+                feedBox(profileUrl[0], "Charlotte", "2 min",
                     "Anyone available on the weekend? ", ""),
                 feedBox(profileUrl[1], "Michael", "6 min",
-                    "This place is amazing!", postUrl[0]),
+                    "This place is amazing!", postUrl[1]),
                 feedBox(
                     profileUrl[2],
                     "Lynda",
-                    "6 min",
+                    "15 min",
                     "available at the end of this month!! dont miss it ",
                     postUrl[1]),
               ],
@@ -135,7 +146,16 @@ class _fakeHomeScreenState extends State<fakeHomeScreen> {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
-        color: const Color(0xfF86B4CF),
+        color: const Color(0XFFB6D0E2),
+        border: Border.all(color: Colors.grey),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.8),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),

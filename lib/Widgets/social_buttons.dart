@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tech387task/provider/auth_provider.dart';
-import 'package:tech387task/screens/home_screen.dart';
+
+import '../screens/home_screen.dart';
 
 class SocalButtns extends StatelessWidget {
   const SocalButtns({
@@ -14,12 +15,19 @@ class SocalButtns extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            AuthClass().signInWithFacebook().then((UserCredential value) {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  (route) => false);
+            });
+          },
           icon: Image.asset("assets/images/facebook.png"),
         ),
         IconButton(
           onPressed: () {
-            //Sign In with google
+            // //Sign In with google
             AuthClass().signWithGoogle().then((UserCredential value) {
               Navigator.pushAndRemoveUntil(
                   context,

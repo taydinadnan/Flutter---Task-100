@@ -15,8 +15,16 @@ class _fakeNotificationState extends State<fakeNotification> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Notifications'),
-          backgroundColor: const Color(0xfF86B4CF),
+          elevation: 6,
+          title: const Text(
+            'Notifications',
+            style: TextStyle(color: Colors.black),
+          ),
+          leading: const Icon(
+            Icons.notifications,
+            color: Colors.black,
+          ),
+          backgroundColor: const Color(0xFF96DED1),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -26,11 +34,22 @@ class _fakeNotificationState extends State<fakeNotification> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //First of all we need to creat the post editor
+                const SizedBox(
+                  height: 30,
+                ),
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: const Color(0xfF86B4CF),
                     borderRadius: BorderRadius.circular(12.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.8),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -42,7 +61,6 @@ class _fakeNotificationState extends State<fakeNotification> {
                             SizedBox(
                               width: 10.0,
                             ),
-                            Icon(Icons.notification_important_outlined),
                             Expanded(
                               child: Center(
                                 child: Text(
@@ -52,6 +70,9 @@ class _fakeNotificationState extends State<fakeNotification> {
                               ),
                             ),
                           ],
+                        ),
+                        const SizedBox(
+                          height: 10,
                         ),
                         const Divider(
                           color: Colors.black,
@@ -64,7 +85,6 @@ class _fakeNotificationState extends State<fakeNotification> {
                             SizedBox(
                               width: 10.0,
                             ),
-                            Icon(Icons.notification_important_outlined),
                             Expanded(
                               child: Center(
                                 child: Text(

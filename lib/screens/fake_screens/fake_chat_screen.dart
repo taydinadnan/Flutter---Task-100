@@ -21,12 +21,13 @@ class _ChatScreenState extends State<ChatScreen> {
       width: radius,
       height: radius,
       decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            alignment: Alignment.topCenter,
-            image: NetworkImage(urlImg),
-          )),
+        shape: BoxShape.circle,
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          alignment: Alignment.topCenter,
+          image: NetworkImage(urlImg),
+        ),
+      ),
     );
   }
 
@@ -85,100 +86,177 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 15.0,
-            vertical: 35.0,
-          ),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  // Profile picture and new message button
-                  profileWidget(_profileimage[0], 60.0),
-                  const SizedBox(
-                    width: 10.0,
+      child: Container(
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15.0,
+              vertical: 35.0,
+            ),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    // Profile picture and new message button
+                    profileWidget(_profileimage[0], 60.0),
+                    const SizedBox(
+                      width: 10.0,
+                    ),
+                    const Expanded(
+                      child: Text(
+                        "Messages",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    MaterialButton(
+                      onPressed: () {},
+                      elevation: 7,
+                      padding: const EdgeInsets.all(8.0),
+                      color: const Color(0xFFCCCCFF),
+                      shape: const CircleBorder(),
+                      child: const Icon(
+                        Icons.new_label,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
+
+                //search bar
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30.0),
+                    color: const Color(0xFFCCCCFF),
+                    border: Border.all(color: Colors.grey),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.8),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
                   ),
-                  const Expanded(
-                    child: Text(
-                      "Messages",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w700,
+                  child: TextField(
+                    cursorColor: Colors.black,
+                    style: const TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(
+                        Icons.search,
+                        color: Colors.grey,
+                      ),
+                      hintText: "Search",
+                      contentPadding: const EdgeInsets.only(left: 34.0),
+                      filled: true,
+                      fillColor: Colors.grey[300],
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: BorderSide.none,
                       ),
                     ),
                   ),
-                  MaterialButton(
-                    onPressed: () {},
-                    elevation: 0.0,
-                    padding: const EdgeInsets.all(8.0),
-                    color: const Color(0xfF86B4CF),
-                    shape: const CircleBorder(),
-                    child: const Icon(
-                      Icons.new_label,
-                      color: Colors.white,
-                    ),
-                  )
-                ],
-              ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
 
-              //search bar
-              const SizedBox(
-                height: 20.0,
-              ),
-              TextField(
-                cursorColor: Colors.black,
-                style: const TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(
-                    Icons.search,
-                    color: Colors.grey,
-                  ),
-                  hintText: "Search",
-                  contentPadding: const EdgeInsets.only(left: 34.0),
-                  filled: true,
-                  fillColor: Colors.grey[300],
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(50.0),
-                    borderSide: BorderSide.none,
+                //chat feed
+                Expanded(
+                  child: ListView(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.0),
+                          color: const Color(0xFFCCCCFF),
+                          border: Border.all(color: Colors.grey),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.8),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: listItem(
+                            _profileimage[1],
+                            "Charlotte",
+                            String,
+                            "We need your help",
+                            "9:53PM",
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.0),
+                          color: const Color(0xFFCCCCFF),
+                          border: Border.all(color: Colors.grey),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.8),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: listItem(
+                            _profileimage[2],
+                            "Michael",
+                            String,
+                            "Are you comming ?",
+                            "6:33PM",
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.0),
+                          color: const Color(0xFFCCCCFF),
+                          border: Border.all(color: Colors.grey),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.8),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: listItem(
+                            _profileimage[3],
+                            "Lynda",
+                            String,
+                            "Hey !! what's up",
+                            "11:20 AM",
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-
-              //chat feed
-              Expanded(
-                child: ListView(
-                  children: [
-                    listItem(
-                      _profileimage[1],
-                      "Charlotte",
-                      String,
-                      "We need your help",
-                      "9:53PM",
-                    ),
-                    listItem(
-                      _profileimage[2],
-                      "Michael",
-                      String,
-                      "Are you comming ?",
-                      "6:33PM",
-                    ),
-                    listItem(
-                      _profileimage[3],
-                      "Lynda",
-                      String,
-                      "Hey !! what's up",
-                      "11:20 AM",
-                    ),
-                  ],
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
