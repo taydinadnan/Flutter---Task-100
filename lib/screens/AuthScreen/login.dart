@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tech387task/Widgets/social_buttons.dart';
-import 'package:tech387task/Widgets/title_main.dart';
+import 'package:neon/neon.dart';
 
 import '/screens/AuthScreen/forgot_password.dart';
 import '/screens/AuthScreen/signup.dart';
@@ -112,7 +112,15 @@ class _LoginAuthState extends State<LoginAuth> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
-                  child: TitleMain(),
+                  child: Neon(
+                    text: 'MöweeHome',
+                    color: Colors.purple,
+                    fontSize: 35,
+                    font: NeonFont.Beon,
+                    flickeringText: true,
+                    flickeringLetters: null,
+                    glowingDuration: const Duration(seconds: 1),
+                  ),
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 10.0),
@@ -121,7 +129,6 @@ class _LoginAuthState extends State<LoginAuth> {
                     decoration: const InputDecoration(
                       labelText: 'Email',
                       labelStyle: TextStyle(fontSize: 15.0),
-                      border: OutlineInputBorder(),
                       errorStyle: TextStyle(
                         color: Colors.black38,
                         fontSize: 15,
@@ -146,8 +153,7 @@ class _LoginAuthState extends State<LoginAuth> {
                     obscureText: true,
                     decoration: const InputDecoration(
                       labelText: 'Password',
-                      labelStyle: TextStyle(fontSize: 20.0),
-                      border: OutlineInputBorder(),
+                      labelStyle: TextStyle(fontSize: 15.0),
                       errorStyle: TextStyle(
                         color: Colors.black38,
                         fontSize: 15,

@@ -111,9 +111,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         child: TextFormField(
                           autofocus: false,
                           decoration: const InputDecoration(
-                            labelText: 'Comfirm password',
+                            labelText: 'Email',
                             labelStyle: TextStyle(fontSize: 15.0),
-                            border: OutlineInputBorder(),
                             errorStyle: TextStyle(
                               color: Colors.black38,
                               fontSize: 15,

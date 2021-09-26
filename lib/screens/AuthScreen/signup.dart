@@ -146,7 +146,6 @@ class _SignupState extends State<Signup> {
                     decoration: const InputDecoration(
                       labelText: 'Email',
                       labelStyle: TextStyle(fontSize: 15.0),
-                      border: OutlineInputBorder(),
                       errorStyle: TextStyle(
                         color: Colors.black26,
                         fontSize: 15,
@@ -171,8 +170,7 @@ class _SignupState extends State<Signup> {
                     obscureText: true,
                     decoration: const InputDecoration(
                       labelText: 'Password',
-                      labelStyle: TextStyle(fontSize: 20.0),
-                      border: OutlineInputBorder(),
+                      labelStyle: TextStyle(fontSize: 15.0),
                       errorStyle: TextStyle(
                         color: Colors.black26,
                         fontSize: 15,
@@ -197,8 +195,7 @@ class _SignupState extends State<Signup> {
                     obscureText: true,
                     decoration: const InputDecoration(
                       labelText: 'Comfirm password',
-                      labelStyle: TextStyle(fontSize: 20.0),
-                      border: OutlineInputBorder(),
+                      labelStyle: TextStyle(fontSize: 15.0),
                       errorStyle: TextStyle(
                         color: Colors.black26,
                         fontSize: 15,
