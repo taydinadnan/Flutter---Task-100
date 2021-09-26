@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
    <application
-        android:label="tech387task"
+        android:label="Möwee"
         android:icon="@mipmap/ic_launcher">
          <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyA_ZcEo1GKc0AkgJGeeRZSfqiifNXdxERw"/>

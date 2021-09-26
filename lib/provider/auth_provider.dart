@@ -49,6 +49,4 @@ class AuthClass {
     return await FirebaseAuth.instance
         .signInWithCredential(facebookAuthCredential);
   }
-
-  userLogin() {}
 }

@@ -30,6 +30,7 @@ class _SignupState extends State<Signup> {
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
+//user signup function
   registration() async {
     if (password == comfirmPassword) {
       try {

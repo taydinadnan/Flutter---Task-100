@@ -41,6 +41,7 @@ class _ProfileScState extends State<ProfileSc> {
 
   User? user = FirebaseAuth.instance.currentUser;
 
+//Email verification function
   verifyEmail() async {
     if (user != null && !user!.emailVerified) {
       await user!.sendEmailVerification();
@@ -58,6 +59,7 @@ class _ProfileScState extends State<ProfileSc> {
     }
   }
 
+//userid display
   Widget buildName(User user) => Column(
         children: [
           Text(
@@ -68,6 +70,7 @@ class _ProfileScState extends State<ProfileSc> {
         ],
       );
 
+//googlemaps location , and moving from one location to another location
   Widget buildlocation(User location) => Stack(
         children: [
           Center(
@@ -85,7 +88,7 @@ class _ProfileScState extends State<ProfileSc> {
           Align(
             alignment: Alignment.bottomRight,
             child: InkWell(
-              onTap: movetoBoston,
+              onTap: movetoSarajevo,
               child: Container(
                 height: 40.0,
                 width: 40.0,
@@ -109,7 +112,8 @@ class _ProfileScState extends State<ProfileSc> {
     });
   }
 
-  movetoBoston() {
+//move map camera posiyon to sarajevo
+  movetoSarajevo() {
     _controller.animateCamera(
       CameraUpdate.newCameraPosition(
         const CameraPosition(

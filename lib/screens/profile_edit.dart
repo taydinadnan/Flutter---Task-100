@@ -53,10 +53,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
                 const SizedBox(height: 24),
                 FloatingActionButton(
-                    child: const Icon(Icons.save_rounded),
-                    onPressed: () {
-                      Navigator.maybeOf(context);
-                    })
+                  child: const Icon(Icons.save_rounded),
+                  onPressed: () {
+                    Navigator.maybeOf(context);
+                  },
+                )
               ],
             ),
           ),

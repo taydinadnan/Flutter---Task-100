@@ -24,6 +24,7 @@ class _LoginAuthState extends State<LoginAuth> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+//user login function
   userLogin() async {
     try {
       await FirebaseAuth.instance

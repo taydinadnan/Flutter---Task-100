@@ -18,6 +18,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   final emailController = TextEditingController();
 
+//reset password function
   resetPassword() async {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);

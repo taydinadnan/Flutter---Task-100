@@ -16,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var _currentIndex = 0;
 
+// bottom navigation bar content
   final tabs = [
     const Center(child: fakeHomeScreen()),
     const Center(child: ChatScreen()),

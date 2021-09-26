@@ -10,11 +10,13 @@ class fakeHomeScreen extends StatefulWidget {
 
 // ignore: camel_case_types
 class _fakeHomeScreenState extends State<fakeHomeScreen> {
+  //profile images
   List<String> profileUrl = [
     "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
     "https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=644&q=80",
     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
   ];
+  //post images
   List<String> postUrl = [
     "https://lh3.googleusercontent.com/proxy/oCA8n3qUEYVFG_k_ncpWCI6tfbV4Gerv55NzBvxtqn_D9-NUvIOOSsEPFPmEyw664D-a9GYFhrcPktoHhhpNnu47beGyM209",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5OS0kZBKbgbm8KLMLSszCPOB4lhEJM-ZMmUIakaQoU75dXrMYGyoJiEf7HBHPSQeSdUY&usqp=CAU",
@@ -86,7 +88,6 @@ class _fakeHomeScreenState extends State<fakeHomeScreen> {
                         const SizedBox(
                           height: 5.0,
                         ),
-                        //Now we will create a Row of three button
                         Row(
                           children: const [
                             Spacer(),
@@ -114,13 +115,9 @@ class _fakeHomeScreenState extends State<fakeHomeScreen> {
                     ),
                   ),
                 ),
-
                 const SizedBox(
                   height: 20.0,
                 ),
-                //Now let's create the news feed
-                //first we will make the custom container of the feed
-                //Ok let's test our widget
                 feedBox(profileUrl[0], "Charlotte", "2 min",
                     "Anyone available on the weekend? ", ""),
                 feedBox(profileUrl[1], "Michael", "6 min",
@@ -139,6 +136,7 @@ class _fakeHomeScreenState extends State<fakeHomeScreen> {
     );
   }
 
+// feed function
   Widget feedBox(String profileUrl, String userName, String date,
       String contentText, String contentImg) {
     return Container(

@@ -33,7 +33,6 @@ class _fakeNotificationState extends State<fakeNotification> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                //First of all we need to creat the post editor
                 const SizedBox(
                   height: 30,
                 ),
